@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #d8d9e5;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f1f3fe;
+  --color-surface-container: #ecedf9;
+  --color-surface-container-high: #e6e8f3;
+  --color-surface-container-highest: #e0e2ed;
+  
+  --color-on-surface: #181c23;
+  --color-on-surface-variant: #414755;
+  
+  --color-primary: #0058bc;
+  --color-primary-container: #0070eb;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary-container: #d2e0fe;
+  --color-on-secondary-container: #55637d;
+  
+  --color-tertiary-fixed: #cae9de;
+  --color-tertiary-fixed-dim: #aecdc2;
+  --color-on-tertiary-fixed: #032019;
+  
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans;
+    background: radial-gradient(circle at top right, #f0f7ff 0%, #f9f9ff 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-sm;
+  }
+  
+  .haptic-bounce {
+    @apply transition-transform active:scale-95;
+  }
+}
